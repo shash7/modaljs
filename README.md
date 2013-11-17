@@ -26,12 +26,9 @@ Use the create() method to create modal windows
 	modal.unstage(); //Hide the modal
 	modal.stage(); //Show the last modal
 	modal.destroy(); //Same as unstage() except that it will empty modal's contents
-Try it now
-<input type="text" id="text">
-<input type="button" onclick="modal.create($('#text').val());" value="Show modal">
 
 ### 4. Css
-The default css is made for jank free animations. It is recommended that you customise it to suit your
+The default css is made for jank free animations. It is recommended that you customize it to suit your
 own needs.
 
 Inside the modal, four classes are available
@@ -50,5 +47,4 @@ Inside the modal, four classes are available
 **Credits & license**
 
 Created by shash7
-
 Licensed under MIT license
