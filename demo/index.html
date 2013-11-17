@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Boilerplate</title>
+		<link rel="stylesheet" href="base.css">
+		<link rel="stylesheet" href="../dist/modal.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../dist/modal.js"></script>
+	</head>
+	<body>
+		<script>
+		var modal = new Modal();
+		modal.create('gg');
+			
+		</script>
+		
+		<div class="main">
+			<h1 id="modaljs">modaljs</h1>
+			
+			<p>A lightweight jquery plugin for creating modal windows</p>
+			
+			<p>Dependencies :
+			* jquery</p>
+			
+			<h3 id="1markup">1. Markup</h3>
+			
+			<p>Add modaljs to your page</p>
+			
+			<pre><code>&lt;link rel="stylesheet" href="modal.css"&gt;
+			&lt;script src="modal.js"&gt;&lt;/script&gt;
+			</code></pre>
+			
+			<h3 id="2javascript">2. Javascript</h3>
+			
+			<p>Running this code will create and show a modal window</p>
+			
+			<pre><code>var modal = new Modal();
+			</code></pre>
+			
+			<h3 id="3creatingmodals">3. Creating modals</h3>
+			
+			<p>Use the create() method to create modal windows</p>
+			
+			<pre><code>modal.create('gg');
+			
+			modal.unstage(); //Hide the modal
+			modal.stage(); //Show the last modal
+			modal.destroy(); //Same as unstage() except that it will empty modal's contents
+			</code></pre>
+			
+			<p>Try it now
+			<input type="text" id="text">
+			<input type="button" onclick="modal.create($('#text').val());" value="Show modal"></p>
+			
+			<h3 id="4css">4. Css</h3>
+			
+			<p>The default css is made for jank free animations. It is recommended that you customise it to suit your
+			own needs.</p>
+			
+			<p>Inside the modal, four classes are available</p>
+			
+			<pre><code>.modal-head 
+			.modal-body
+			.close
+			</code></pre>
+			
+			<h3 id="parameters">Parameters</h3>
+			
+			<pre><code>var modal = new Modal({
+					closeOnClick : false //Default : true
+			});
+			</code></pre>
+			
+			<p><strong>Credits &amp; license</strong></p>
+			
+			<p>Created by shash7</p>
+			
+			<p>Licensed under MIT license</p>
+			
+		</div>
+	</body>
+</html>
