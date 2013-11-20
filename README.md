@@ -31,7 +31,7 @@ Use the create() method to create modal windows
 The default css is made for jank free animations. It is recommended that you customize it to suit your
 own needs.
 
-Inside the modal, four classes are available
+Inside the modal, three classes are available
 
 	.modal-head 
 	.modal-body
