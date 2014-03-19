@@ -3,8 +3,8 @@ modaljs
 
 A lightweight jquery plugin for creating modal windows
 
-Dependencies :
-* jquery
+Dependence :
+jquery
 
 
 ### 1. Markup
@@ -21,11 +21,11 @@ Running this code will create and show a modal window
 ### 3. Creating modals
 Use the create() method to create modal windows
 
-	modal.create('gg');
-
-	modal.unstage(); //Hide the modal
-	modal.stage(); //Show the last modal
-	modal.destroy(); //Same as unstage() except that it will empty modal's contents
+	modal.create('gg'); // Create a new modal
+	modal.unstage();    // Hide the modal
+	modal.close();      // Same as unstage
+	modal.stage();      // Show the last modal
+	modal.destroy();    // Same as unstage() except that it will empty modal's contents
 
 ### 4. Css
 The default css is made for jank free animations. It is recommended that you customize it to suit your
@@ -35,12 +35,16 @@ Inside the modal, three classes are available
 
 	.modal-head 
 	.modal-body
-	.close
+	.modal-footer
+	
+Use them to create a structured modal window.
+
+If you want a close button, add an a element with the classname 'modal-close'
 
 ### Parameters
 
 	var modal = new Modal({
-		closeOnClick : false //Default : true
+		backdrop : false // Default : true
 	});
 
 

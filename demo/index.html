@@ -9,75 +9,52 @@
 		<script src="../dist/modal.js"></script>
 	</head>
 	<body>
-		<script>
-		var modal = new Modal();
-		modal.create('gg');
-			
-		</script>
 		
 		<div class="main">
-			<h1 id="modaljs">modaljs</h1>
-			
+			<h1>modaljs</h1>
 			<p>A lightweight jquery plugin for creating modal windows</p>
-			
-			<p>Dependencies :
-			* jquery</p>
-			
-			<h3 id="1markup">1. Markup</h3>
-			
+			<p>Dependence :
+			jquery</p>
+			<h3>1. Markup</h3>
 			<p>Add modaljs to your page</p>
-			
-			<pre><code>&lt;link rel="stylesheet" href="modal.css"&gt;
-			&lt;script src="modal.js"&gt;&lt;/script&gt;
-			</code></pre>
-			
-			<h3 id="2javascript">2. Javascript</h3>
-			
+			<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;modal.css&quot;&gt;
+			&lt;script src=&quot;modal.js&quot;&gt;&lt;/script&gt;</code></pre>
+			<h3>2. Javascript</h3>
 			<p>Running this code will create and show a modal window</p>
-			
-			<pre><code>var modal = new Modal();
-			</code></pre>
-			
-			<h3 id="3creatingmodals">3. Creating modals</h3>
-			
+			<pre><code>var modal = new Modal();</code></pre>
+			<h3>3. Creating modals</h3>
 			<p>Use the create() method to create modal windows</p>
-			
-			<pre><code>modal.create('gg');
-			
-			modal.unstage(); //Hide the modal
-			modal.stage(); //Show the last modal
-			modal.destroy(); //Same as unstage() except that it will empty modal's contents
-			</code></pre>
-			
-			<p>Try it now
-			<input type="text" id="text">
-			<input type="button" onclick="modal.create($('#text').val());" value="Show modal"></p>
-			
-			<h3 id="4css">4. Css</h3>
-			
-			<p>The default css is made for jank free animations. It is recommended that you customise it to suit your
+			<pre><code>modal.create(&#39;gg&#39;); // Create a new modal
+			modal.unstage();    // Hide the modal
+			modal.close();      // Same as unstage
+			modal.stage();      // Show the last modal
+			modal.destroy();    // Same as unstage() except that it will empty modal&#39;s contents</code></pre>
+			<h3>4. Css</h3>
+			<p>The default css is made for jank free animations. It is recommended that you customize it to suit your
 			own needs.</p>
-			
-			<p>Inside the modal, four classes are available</p>
-			
-			<pre><code>.modal-head 
+			<p>Inside the modal, three classes are available</p>
+			<pre><code>
+			.modal-head 
 			.modal-body
-			.close
-			</code></pre>
-			
-			<h3 id="parameters">Parameters</h3>
-			
+			.modal-footer</code></pre>
+			<p>Use them to create a structured modal window.</p>
+			<p>If you want a close button, add an a element with the classname &#39;modal-close&#39;</p>
+			<h3>Parameters</h3>
 			<pre><code>var modal = new Modal({
-					closeOnClick : false //Default : true
-			});
-			</code></pre>
-			
+					backdrop : false // Default : true
+			});</code></pre>
 			<p><strong>Credits &amp; license</strong></p>
-			
-			<p>Created by shash7</p>
-			<p>Fork me on github! | github.com/shash7</p>
-			<p>Licensed under MIT license</p>
-			
+			<p>Created by shash7
+			Licensed under MIT license</p>
 		</div>
+		
+		<script>
+		var str = '<div class="modal-head"><h2>Hi there</h2><a class="modal-close" onclick="modal.close()"></a></div><div class="modal-body">' +
+				'<p>It seems like we have a problem</p></div>' +
+				'<div class="modal-footer"><input type="button" value="Close" onclick="modal.close()"></div>';
+		var modal = new Modal();
+		modal.create(str);
+			
+		</script>
 	</body>
 </html>
